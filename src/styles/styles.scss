@@ -1,0 +1,157 @@
+$colors: (
+    background-app: #020D45,
+    font: #fff,
+    border: rgba(113, 112, 112, 0.306),
+    glass: radial-gradient(100% 100% at 0% 0%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.108) 100%),
+);
+
+@function color($color-name) {
+    @return map-get($colors, $color-name)
+  }
+
+$font-size: (
+  logo: 2em,
+
+);
+
+@function font-size($f-size) {
+    @return map-get($font-size, $f-size )
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    outline: none;
+}
+
+body {
+
+    .app-conteiner{
+        width: 100vw;
+        height: 100vh;
+        min-height: 850px;
+        background: color(background-app);
+
+            header{
+                width: 100%;
+                height: 80px;
+                display: flex;
+
+                .logo{
+                    color: color(font);
+                    font-size: font-size(logo);
+                    font-weight: 500;
+                    margin-left: 10%;
+                    margin-top: auto;
+                    margin-bottom: auto;
+                }
+            }
+
+            .search-conteiner{
+                width: 100%;
+                height: 100px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 2vw;
+
+                .input-box{
+                    border-radius: 30px;
+                    border: solid color(border) 1px;
+                    background-color: color(border);
+                    width: 410px;
+                    height: 40px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+
+                    input[type=text]{
+                        border: none;
+                        width: 80%;
+                        height: 100%;
+                        border-radius: 30px;
+                        padding: 0 20px 0 20px;
+                        background: none;
+                        color: color(font);
+                    }
+
+                    input[type=text]::placeholder{
+                        color: rgba(255, 255, 255, 0.605);
+                    }
+                    .location-icon {
+                        color: color(font);
+                        font-size: 24px;
+                        position: relative;
+                        top: 2px
+                        
+                    }
+                }
+            }
+
+            .data-conteiner{
+                width: 100%;
+                height: 600px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+
+                .card{
+                    background: color(glass);
+                    height: auto;
+                    height: 100%;
+                    width: 500px;
+                    border-radius: 50px;
+                    backdrop-filter: blur(42px);
+                    box-shadow: inset -5px -5px 250px rgba(255, 255, 255, 0.02);
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    
+                    .type{
+                        font-size: 2em;
+                        font-weight: 500;
+                        color: color(font);
+                        margin-top: 40px;
+                    }
+
+                    .icon{
+                        font-size: 4em;
+                        color: color(font);
+                        margin-top: 40px;
+                    }
+
+                    .temp{
+                        font-size: 9em;
+                        color: color(font);
+                        margin-top: 10px;
+                        margin-left: 25px;
+
+                        span{
+                            bottom: 100px;
+                            position: relative;
+                            font-size: 18px;
+                        }
+                    }
+
+                    .city-name{
+                        font-size: 2em;
+                        font-weight: 500;
+                        color: color(font);
+                        margin-top: 50px;
+                    }
+
+                    .date{
+                        font-size: 1em;
+                        color: color(font);
+                        margin-top: 20px;
+
+                    }
+                }
+            }
+    }
+}
